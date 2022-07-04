@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 200px;
+    position: relative;
+    left: 50%;
+    margin-left: -100px;
+}
+h1 {
+    font-size: 18px;
+    font-weight: normal;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    background-color:rgb(108, 184, 214);
+    padding-left: 20px;
+}
+
+.nav > li {
+    height: 30px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.navSub li {
+    height: 30px;
+    padding: 5px 0 5px 20px;
+    background-color: #5edad3;
+}
+
+.navSub h4 {
+    font-weight: normal;
+    font-size: 14px;
+}

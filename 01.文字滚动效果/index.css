@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul {
+    height: 30px;
+    overflow: hidden;
+}
+
+.bg {
+    background-color: aqua;
+    line-height: 30px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.fl {
+    float: left;
+}
+
+.left {
+    margin: 0 30px;
+}
+
+.right {
+    margin: 0 30px;
+    height: 30px;
+}

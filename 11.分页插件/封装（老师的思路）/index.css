@@ -1,0 +1,32 @@
+.pager {
+    text-align: center;
+}
+
+.pager a {
+    color: #001ac4;
+    font-size: 14px;
+    border: 1px solid #e1e2e3;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 12px;
+    margin: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.pager a.active {
+    border: none;
+    color: red;
+    cursor: default;
+}
+
+.pager a.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+span.pagerNum {
+    font-style: italic;
+    user-select: none;
+}

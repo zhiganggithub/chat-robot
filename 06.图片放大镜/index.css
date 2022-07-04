@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* box-sizing: border-box; */
+}
+body {
+    background-color: rgb(96, 135, 245);
+}
+
+.container {
+    width: 420px;
+    height: 400px;
+    position: relative;
+    margin: 30px auto;
+}
+
+.showLeft {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    position: absolute;
+    cursor: pointer;
+    left: 5px;
+}
+
+.showLeft .mask {
+    width: 100%;
+    height: 100%;
+    background: #fff transparent; 
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.showLeft img {
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+#mirror {
+    width: 50px;
+    height: 50px;
+    background:rgb(236, 115, 16, 0.5);
+    position: absolute;
+    margin-left: -25px;
+    margin-top: -25px;
+    left: 25px;
+    top: 25px;
+}
+
+.list {
+    position: absolute;
+    left: 5px;
+    top: 210px;
+    text-align: center;
+    width: 200px;
+}
+
+.list .selected {
+    outline: 1px solid #000;
+}
+
+.list img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.showRight {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 210px;
+    overflow: hidden;
+}
+
+.showRight img {
+    width: 800px;
+    height: 800px;
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* border: 1px solid red; */
+    /* opacity: 0.3; */
+}
+
+.dn {
+    display: none;
+}

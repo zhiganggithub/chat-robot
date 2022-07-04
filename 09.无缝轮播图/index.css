@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.container {
+    width: 400px;
+    height: 200px;
+    /* outline: 2px solid red; */
+    position: relative;
+    margin-left: -200px;
+    /* overflow: hidden; */
+    top: 30px;
+    left: 50%;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.fl {
+    float: left;
+}
+
+.banner {
+    position: absolute;
+    width: 1600px;
+}
+
+img {
+    /* outline: 2px solid; */
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.page {
+    width: 40px;
+    height: 200px;
+    line-height: 200px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    font-size: 28px;
+    cursor: pointer;
+    /* display: none; */
+    opacity: 0;
+}
+
+.page:hover {
+    /* display: block; */
+    opacity: 1;
+}
+
+.page-left {
+    left: 0;
+}
+
+.page-right {
+    right: 0;
+}
+
+.no-click {
+    pointer-events: none;
+}
+
+.can-click {
+    pointer-events: all;
+}
+
+#pagebar {
+    /* outline: 2px solid  black; */
+    position: absolute;
+    width: 400px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    bottom: 0;
+}
+
+#pagebar li {
+    width: 20px;
+    height: 4px;
+    background-color: #FFF;
+    cursor: pointer;
+    top: 8px;
+    position: relative;
+    margin-right: 5px;
+}
+
+#pagebar li.active {
+    background-color: #c9ae38;
+}

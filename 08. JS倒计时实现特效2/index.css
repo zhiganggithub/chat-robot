@@ -1,0 +1,54 @@
+body {
+    background-color: #000;
+}
+
+.main {
+    width: 420px;
+    height: 300px;
+    margin: 30px auto;
+    color: #fff;
+    background: url(images/bg.jpg);
+}
+
+.timer {
+    width: 420px;
+    height: 110px;
+    text-align: center;
+    font-size: 0;
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.timer span {
+    font-size: 16px;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.timer div {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: inherit;
+    left: 0;
+    top: 0;
+    vertical-align: middle;
+}
+
+.timer div img {
+    width: inherit;
+    height: inherit;
+}
+
+input {
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+
+button {
+    font-size: 18px;
+    margin-left: 20px;
+    vertical-align: middle;
+}
