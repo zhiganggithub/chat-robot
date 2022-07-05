@@ -1,212 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>00.案例汇总</title>
-    <style>
-        .iframe {
-            position: absolute;
-            border: 3px solid #ccc;
-            transition: all 0.5s;
-        }
-        iframe {
-            width: 420px;
-            border: none;
-        }
-
-        #ifm1 {
-            height: 50px;
-        }
-
-        #ifm2 {
-            height: 350px;
-        }
-
-        #ifm3 {
-            height: 230px;
-        }
-
-        #ifm4 {
-            height: 230px;
-        }
-
-        #ifm5 {
-            height: 280px;
-        }
-        #ifm6 {
-            height: 280px;
-        }
-
-        #ifm8 {
-            height: 300px;
-        }
-        #ifm82 {
-            height: 300px;
-        }
-
-        #ifm9 {
-            height: 260px;
-        }
-
-        #ifm10 {
-            height: 260px;
-        }
-        #ifm11 {
-            height: 200px;
-        }
-
-        #ifm12 {
-            height: 420px;
-        }
-
-        .container {
-            border: 1px solid #ccc;
-            position: relative;
-            box-sizing: border-box;
-            margin: 0 auto;
-            /* padding: 10px; */
-        }
-
-        p {
-            text-align: center;
-        }
-
-        /* 用瀑布流 */
-    </style>
-</head>
-
-<body>
-
-    <h2>JS项目实战合集：</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>聊天机器人-聊天频道</title>
+    <link rel="shortcut icon" href="./asset/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="iframe">
-            <p><button type="button">01.文字滚动效果</button></p>
-            <iframe scrolling="no" id="ifm1" src="./01.文字滚动效果/index.html"></iframe>
+      <div class="main">
+        <h1 class="main-title">
+          <img src="./asset/robot.png" alt="" />
+          AI 聊天机器人
+        </h1>
+        <div class="chat-container">
         </div>
-        <div class="iframe">
-            <p><button type="button">02.手风琴效果</button></p>
-            <iframe scrolling="no" id="ifm2" src="./02.手风琴效果/index.html"></iframe>
-        </div>
-        <div class="iframe">
-            <p><button type="button">03.动态排序表格</button></p>
-            <iframe scrolling="no" id="ifm3" src="./03.动态排序表格/index.html"></iframe>
-        </div>
-        <div class="iframe">
-            <p><button type="button">04.js实现三级联动效果</button></p>
-            <iframe scrolling="no" id="ifm4" src="./04.js实现三级联动效果/index.html"></iframe>
-        </div>
-        <div class="iframe">
-            <p><button type="button">05.腾讯视频重磅推荐模块</button></p>
-            <iframe scrolling="no" id="ifm5" src="./05.腾讯视频重磅推荐模块/index.html"></iframe>
-        </div>
-        <div class="iframe">
-            <p><button type="button">06.图片放大镜</button></p>
-            <iframe scrolling="no" id="ifm6" src="./06.图片放大镜/index.html"></iframe>
-        </div>
-        <div class="iframe">
-            <p><button type="button">08. JS倒计时实现特效</button></p>
-            <iframe scrolling="no" id="ifm8" src="./08. JS倒计时实现特效/index.html"></iframe>
-        </div>
-        <div class="iframe">
-            <p><button type="button">08. JS倒计时实现特效2</button></p>
-            <iframe scrolling="no" id="ifm82" src="./08. JS倒计时实现特效2/index.html"></iframe>
-        </div>
-        <div class="iframe">
-            <p><button type="button">09.无缝轮播图</button></p>
-            <iframe scrolling="no" id="ifm9" src="./09.无缝轮播图/index.html"></iframe>
-        </div>
-        <div class="iframe">
-            <p><button type="button">10.图片瀑布流</button> (TODO iframe可拉伸大小)</p>
-            <iframe scrolling="auto" id="ifm10" src="./10.图片瀑布流/index.html"></iframe>
-        </div>
-        <div class="iframe">
-            <p><button type="button">11.分页插件</button></p>
-            <iframe scrolling="no" id="ifm11" src="./11.分页插件/index.html"></iframe>
-        </div>
-        <div class="iframe">
-            <p><button type="button">12.五子棋游戏</button></p>
-            <iframe scrolling="no" id="ifm12" src="./12.五子棋游戏/index.html"></iframe>
-        </div>
+        <form class="msg-container">
+          <input
+            type="text"
+            id="txtMsg"
+            placeholder="在这里输入要发送的消息，按回车键即可发送"
+          />
+          <button>发送</button>
+        </form>
+      </div>
+      <div class="aside">
+        <img src="./asset/avatar.png" class="aside-avatar" alt="" />
+        <p id="nickname" class="aside-name"></p>
+        <p id="loginId" class="aside-account"></p>
+      </div>
+      <div class="close">
+        <i class="iconfont icon-close"></i>
+      </div>
     </div>
-
-    <script>
-        var container = document.querySelector(".container");
-        var iframes = document.querySelectorAll('.iframe');
-        console.log(iframes);
-
-        var btns = document.querySelectorAll('button');
-
-        var lineArr = [];
-        var itemWidth = 420;
-        var cols = 0;
-        var rows = 0;
-        var debounceResize = debounce(resetPosition, 500);
-
-        function init() {
-            resetPosition();
-
-            for (let i = 0; i < btns.length; i++) {
-                btns[i].onclick = function() {
-                    window.open(btns[i].parentNode.nextElementSibling.src);
-                }
-            }
-        }
-
-        function resetPosition() {
-            resetLineArr();
-            resetImgs();
-        }
-
-        function resetLineArr() {
-            lineArr = [];
-            container.style.width = window.innerWidth * 0.98 + "px";
-            var clientWidth = container.offsetWidth;
-            cols = Math.floor(clientWidth / itemWidth);
-            rows = Math.ceil(iframes.length / cols);
-            for (var i = 0; i < cols; i++) {
-                if (!lineArr[i]) {
-                    lineArr[i] = 0;
-                }
-            }
-            // console.log("lineArr: " + lineArr.length);
-        }
-
-        function resetImgs() {
-            var gap = (container.offsetWidth - cols * itemWidth) / (cols + 1);
-            for (var i = 0; i < iframes.length; i++) {
-                var img = iframes[i];
-                var minValue = Math.min.apply(null, lineArr);
-                var minIndex = lineArr.indexOf(minValue);
-                img.style.left = gap + (gap + itemWidth) * minIndex + "px";
-                img.style.top = gap + lineArr[minIndex] + "px";
-                lineArr[minIndex] += gap + img.offsetHeight;
-            }
-            // console.log(lineArr);
-
-            var maxValue = Math.max.apply(null, lineArr);
-            container.style.height = maxValue + gap + "px";
-        }
-
-        window.onload = init;
-        window.onresize = debounceResize;
-
-        function debounce(fn, delay) {
-            var timerId;
-            return function () {
-                if (timerId) {
-                    clearTimeout(timerId);
-                }
-                args = Array.prototype.slice.call(arguments);
-                timerId = setTimeout(function () {
-                    fn.apply(this, args);
-                }, delay)
-            }
-        }
-    </script>
-
-</body>
-
+    
+    <script src="./js/common.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
